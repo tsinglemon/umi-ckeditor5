@@ -43,14 +43,14 @@ export default defineConfig({
       .end()
       .use('postcss-loader')
       .loader('postcss-loader')
-      .options({
-        postcssOptions: styles.getPostCssConfig({
+      .options(
+        styles.getPostCssConfig({
           themeImporter: {
             themePath: require.resolve('@ckeditor/ckeditor5-theme-lark'),
           },
           minify: true,
         }),
-      });
+      );
 
     // fs.writeFileSync('./webpack.js', config.toString());
   },
