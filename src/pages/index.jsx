@@ -7,6 +7,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import List from '@ckeditor/ckeditor5-list/src/list';
+import Link from '@ckeditor/ckeditor5-link/src/link';
 
 export default class extends Component {
   componentDidMount() {
@@ -30,8 +31,8 @@ export default class extends Component {
         <CKEditor
           editor={ClassicEditor}
           config={{
-            plugins: [List, Paragraph, Bold, Italic, Essentials],
-            toolbar: ['bulletedList', 'numberedList', 'bold', 'italic'],
+            plugins: [Link, List, Paragraph, Bold, Italic, Essentials],
+            toolbar: ['link', 'bulletedList', 'numberedList', 'bold', 'italic'],
           }}
           data="<p>Hello from the first editor working with the context!</p>"
           onReady={(editor) => {
